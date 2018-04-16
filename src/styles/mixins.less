@@ -1,0 +1,56 @@
+// Mixins
+// Utilities
+@import "mixins/vendor-prefixes.less";
+
+// Skins
+@import "mixins/gradients.less";
+
+// Layout
+@import "mixins/center-block.less";
+
+// Custom Mixins
+
+.center (@vpos: 0) {
+    position: absolute;
+
+    & when (@vpos = 0) {
+        top: 0;
+        bottom: 0;
+    }
+
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.text-overflow() {
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.box-shadow (@shadow: none) {
+    -webkit-box-shadow: @shadow;
+    -moz-box-shadow: @shadow;
+    box-shadow: @shadow;
+}
+
+.caret(@thickness, @display: inline-block) {
+    display: @display;
+    width: 0;
+    height: 0;
+    border: @thickness solid transparent;
+}
+
+.arrow (@bColor, @angle, @size: 5px, @thickness: 1px) {
+    content: '';
+    display: block;
+    position: absolute;
+    width: @size;
+    height: @size;
+    border-left: @thickness solid @bColor;
+    border-bottom: @thickness solid @bColor;
+    .rotate(@angle);
+}
