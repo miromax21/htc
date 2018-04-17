@@ -1,0 +1,27 @@
+<span (click)="showPopUp = true">sdsdfsfssdfsdf</span>
+<popup [(show)]="showPopUp" class="popup profile-popup">
+  <span (click)="showPopUp = false" class="icon close"></span>
+  <div class="tabs"></div>
+  wperkjpojwr'h[]
+  <div id="userprofile">
+    <img src="/assets/images/avatar.png" class="avatar" alt="avatar" />
+
+    <div class="profileInfo">
+      <input type="text" value="{{user.city}}" (blur)="DeleteRestriction(this.va)">
+      <input type="text" value="{{user.marital_status}}">
+      <input type="text" value="{{user.phoneNumber}}">
+      <input type="text" value="{{user.email}}">
+
+      <ul class="checkboxs-list scroll ">
+        <ng-container *ngFor="let item of userInterests; let i = index">
+          <label>
+            <span class="tag bg-sea-1 truncate" (click)="DeleteRestriction(i)">
+              <span class="text"> {{item}}</span>
+            </span>
+          </label>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+  <div class="user-friends"></div>
+</popup>

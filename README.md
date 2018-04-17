@@ -5,5 +5,4 @@
 		npm --save dev
 	
 	to start the project run
-		npm start"# htc" 
-"# htc" 
+		npm start

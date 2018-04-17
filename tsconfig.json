@@ -10,9 +10,7 @@
     "target": "es5",
     "baseUrl": "./src",
     "paths": {
-      "@shared": [
-        "app/shared/"
-      ]
+      "@shared": [ "app/shared/" ]
     },
     "typeRoots": [
       "node_modules/@types"

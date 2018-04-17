@@ -5,7 +5,7 @@ export interface IUser {
     marital_status: string;
     phoneNumber: string;
     email: string;
-    interests: string[];
+    interests: string;
 }
 export interface IArticleError {
 

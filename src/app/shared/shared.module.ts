@@ -7,11 +7,9 @@ import { FormsModule } from '@angular/forms';
 // import { StatisticService } from './services/statistic.service';
 // import { CampaignService } from './services/campaign.service';
 // import { CountryService } from './services/country.service';
-
-//import { AuthorizationService } from './services/authorization.service';
-//import { LocalStorageService } from './services/local-storage.service';
-
-//import { AuthGuard } from './auth.guard';
+import { AuthorizationService } from './services/authorization.service';
+import { LocalStorageService } from './services/local-storage.service';
+import { AuthGuard } from './auth.guard';
 // import { AdvertService } from './services/advert.service';
 // import { HttpCacheService } from './services/http-cache.service';
 // import { AdvertGuard } from './advert.guard';
@@ -19,7 +17,13 @@ import { FormsModule } from '@angular/forms';
 // import { CacheInterceptor } from './interceptors/cache.interceptor';
 // import { UrlInterceptor } from './interceptors/url.interceptor';
 
-
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderUnauthorizedComponent } from './header/header-unauthorized/header-unauthorized.component';
+import { HeaderAuthorizedComponent } from './header/header-authorized/header-authorized.component';
+import { ExpandableComponent } from './components/expandable/expandable.component';
+import { FocusDirective } from './components/FocusDirective';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { PopupComponent } from './components/popup/popup.component';
 // import { DatePickerComponent } from './components/datePicker/date-picker.component';
 // import { MyNumberPipe } from './pipes/my-number.pipe';
@@ -32,8 +36,8 @@ import { PopupComponent } from './components/popup/popup.component';
         RouterModule,
         FormsModule
     ],
-    declarations: [PopupComponent],
-    exports: [PopupComponent]
+    declarations: [HeaderComponent, FooterComponent, HeaderUnauthorizedComponent, HeaderAuthorizedComponent, ExpandableComponent, DropdownComponent, PopupComponent],
+    exports: [HeaderComponent, FooterComponent, ExpandableComponent, DropdownComponent, PopupComponent]
 })
 export class SharedModule {
 
@@ -41,9 +45,9 @@ export class SharedModule {
         return {
             ngModule: SharedModule,
             providers: [
-                //   LocalStorageService,
-                //  AuthorizationService//,
-                //  AuthGuard
+                LocalStorageService,
+                AuthorizationService,
+                AuthGuard
                 //     AccountService,
                 //     StatisticService,
                 //     CampaignService,
