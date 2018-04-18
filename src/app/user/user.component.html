@@ -9,37 +9,43 @@
         </div>
         <div class="userprofile-info">
             <div class="userprofile-info-name">
-                <span></span>
-                <input *ngIf="edit_username" inputAutofocus (blur)="chenge('username')" [(ngModel)]="user.username" />
-                <span *ngIf="!edit_username" (click)="edit('username')">{{user.username}}</span>
+                <input *ngIf="edit_username" class="item-input" inputAutofocus (blur)="chenge('username')" [(ngModel)]="user.username" />
+                <span *ngIf="!edit_username" class="item-text" (click)="edit('username')">{{user.username}}</span>
             </div>
 
             <div class="userprofile-info-city">
-                <input *ngIf="edit_city" inputAutofocus (blur)="chenge('city')" [(ngModel)]="user.city" />
-                <span *ngIf="!edit_city" (click)="edit('city')">{{user.city}}</span>
+                <input *ngIf="edit_city" class="item-input" inputAutofocus (blur)="chenge('city')" [(ngModel)]="user.city" />
+                <span *ngIf="!edit_city" class="item-text" (click)="edit('city')">{{user.city}}</span>
             </div>
             <div class="personal-info">
-                <div class="personal-info-values">
+
+                <div class="personal-info-item">
                     <span class="title">Семейное положение</span>
-                    <div class="value">
-                        <input *ngIf="edit_marital_status" inputAutofocus (blur)="chenge('marital_status')" [(ngModel)]="user.marital_status" />
-                        <span *ngIf="!edit_marital_status" (click)="edit('marital_status')">{{user.marital_status}}</span>
-                    </div>
-                    <span class="title">телефон</span>
-                    <div class="value">
-                        <input *ngIf="edit_phoneNumber" inputAutofocus (blur)="chenge('phoneNumber')" [(ngModel)]="user.phoneNumber" />
-                        <span *ngIf="!edit_phoneNumber" (click)="edit('phoneNumber')">{{user.phoneNumber}}</span>
-                    </div>
-                    <span class="title">email</span>
-                    <div class="value">
-                        <input *ngIf="edit_email" inputAutofocus (blur)="chenge('email')" [(ngModel)]="user.email" />
-                        <span *ngIf="!edit_email" (click)="edit('email')">{{user.email}}</span>
-                    </div>
+                    <!-- <input *ngIf="edit_marital_status" inputAutofocus (blur)="chenge('marital_status')" [(ngModel)]="user.marital_status" />
+                    <span *ngIf="!edit_marital_status" (click)="edit('marital_status')">{{user.marital_status}}</span> -->
+                    <input *ngIf="edit_marital_status" inputAutofocus class="item-input" (blur)="chenge('marital_status')" [(ngModel)]="user.marital_status"
+                    />
+                    <span *ngIf="!edit_marital_status" (click)="edit('marital_status')" class="item-text">{{user.marital_status}}</span>
                 </div>
 
+                <div class="personal-info-item">
+                    <span class="title">Телефон</span>
+                    <input *ngIf="edit_phoneNumber" inputAutofocus class="item-input" (blur)="chenge('phoneNumber')" [(ngModel)]="user.phoneNumber"
+                    />
+                    <span *ngIf="!edit_phoneNumber" (click)="edit('phoneNumber')" class="item-text">{{user.phoneNumber}}</span>
+                </div>
 
+                <div class="personal-info-item">
+                    <span class="title">E-mail</span>
+                    <input *ngIf="edit_email" inputAutofocus class="item-input" (blur)="chenge('email')" [(ngModel)]="user.email" />
+                    <span *ngIf="!edit_email" (click)="edit('email')" class="item-text">{{user.email}}</span>
+                </div>
+            </div>
 
+            <div class="interests">
+                <span class="title">Интересы</span>
                 <ul class="checkboxs-list scroll">
+
                     <ng-container *ngFor="let item of userInterests ">
                         <span class="userInteres"> {{item}}</span>
                     </ng-container>
@@ -47,6 +53,7 @@
             </div>
         </div>
     </div>
+</div>
 
-    <input type="text" name="interes" placeholder="Task" #interesInput>
-    <button (click)="addInteres(interesInput.value)">Add</button>
+<input type="text" name="interes" placeholder="Task" #interesInput>
+<button (click)="addInteres(interesInput.value)">Add</button>
