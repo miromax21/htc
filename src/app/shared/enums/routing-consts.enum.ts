@@ -1,4 +1,5 @@
 export enum RoutingConsts {
     root = "",
-    user = "user"
+    user = "user",
+    friends = "friends"
 }

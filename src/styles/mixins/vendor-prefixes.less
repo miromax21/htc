@@ -240,3 +240,24 @@
       -ms-user-select: @select; // IE10+
           user-select: @select;
 }
+
+.custom-scrol-bar(@bg-color,@track-color,@width, @border-radius){
+
+  ::-webkit-scrollbar-track {background-color : @track-color; border-radius: @border-radius;}
+  ::-webkit-scrollbar {width: @width;}
+  ::-webkit-scrollbar-thumb {border-radius: @border-radius;background:@track-color;}
+
+  ::-moz-scrollbar-button:decrement,
+  ::-moz-scrollbar-button:increment,
+  ::-webkit-scrollbar-button:decrement,
+  ::-webkit-scrollbar-button:increment {
+    width: 0px;
+    
+    visibility: collapse !important; 
+  }
+
+// For Internet Explorer
+//scrollbar-face-color:  @track-color;
+//scrollbar-track-color: @bg-color;
+
+}

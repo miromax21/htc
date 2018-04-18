@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { ProfileComponent } from '../app/user/profile/profile.component';
-import { UserComponent } from '../app/user/user.component';
+import { UserComponent } from '../app/user/profile/user.component';
+import { FriendsComponent } from '../app/user/friends/friends.component';
 import { AuthGuard, RoutingConsts } from './shared';
 const routes: Routes = [
+    { path: RoutingConsts.friends, component: FriendsComponent, canActivate: [AuthGuard] },
     { path: RoutingConsts.user, component: UserComponent, canActivate: [AuthGuard] },
     { path: '**', component: PageNotFoundComponent, pathMatch: 'full' }
 ];

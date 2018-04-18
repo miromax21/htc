@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/first';
 
 import { IUser } from '../interfaces/i-user.interface';
@@ -12,7 +12,7 @@ export class ProfileService {
 	private _returnUrl: string;
 
 	constructor(
-		private _localStorageService: LocalStorageService,
+		private _localStorageService: LocalStorageService
 	) { }
 
 	GetUser(): IUser {

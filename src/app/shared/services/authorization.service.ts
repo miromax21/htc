@@ -24,7 +24,7 @@ export class AuthorizationService {
     let user: IUser = {
       "id": 1,
       "username": "Виталя Гора",
-      "city": "г. Нижние Шахты",
+      "location": "г. Нижние Шахты",
       "marital_status": "холост",
       "phoneNumber": "+7 (440) 554-32-12",
       "email": "vitalya@gora.ru",

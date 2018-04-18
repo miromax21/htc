@@ -1,6 +1,4 @@
-<app-profile [data]="user"></app-profile>
-<a href="/user">user</a>
-<div class="container profile">
+<div class="content profile">
 
     <div id="userprofile">
         <div class="avatar">
@@ -13,16 +11,14 @@
                 <span *ngIf="!edit_username" class="item-text" (click)="edit('username')">{{user.username}}</span>
             </div>
 
-            <div class="userprofile-info-city">
-                <input *ngIf="edit_city" class="item-input" inputAutofocus (blur)="chenge('city')" [(ngModel)]="user.city" />
-                <span *ngIf="!edit_city" class="item-text" (click)="edit('city')">{{user.city}}</span>
+            <div class="userprofile-info-location">
+                <input *ngIf="edit_location" class="item-input" inputAutofocus (blur)="chenge('location')" [(ngModel)]="user.location" />
+                <span *ngIf="!edit_location" class="item-text" (click)="edit('location')">{{user.location}}</span>
             </div>
             <div class="personal-info">
 
                 <div class="personal-info-item">
                     <span class="title">Семейное положение</span>
-                    <!-- <input *ngIf="edit_marital_status" inputAutofocus (blur)="chenge('marital_status')" [(ngModel)]="user.marital_status" />
-                    <span *ngIf="!edit_marital_status" (click)="edit('marital_status')">{{user.marital_status}}</span> -->
                     <input *ngIf="edit_marital_status" inputAutofocus class="item-input" (blur)="chenge('marital_status')" [(ngModel)]="user.marital_status"
                     />
                     <span *ngIf="!edit_marital_status" (click)="edit('marital_status')" class="item-text">{{user.marital_status}}</span>
@@ -54,6 +50,5 @@
         </div>
     </div>
 </div>
-
 <input type="text" name="interes" placeholder="Task" #interesInput>
 <button (click)="addInteres(interesInput.value)">Add</button>

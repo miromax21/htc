@@ -6,9 +6,10 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProfileComponent } from '../app/user/profile/profile.component';
-import { UserComponent } from '../app/user/user.component';
+import { UserComponent } from '../app/user/profile/user.component';
+import { FriendsComponent } from '../app/user/friends/friends.component'
 import { ProfileService } from './shared/services/profile.service';
+import { FriendsService } from './shared/services/frends.service';
 import { HomeComponent } from './home.component';
 import {
       SharedModule,
@@ -26,8 +27,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
       declarations: [
             AppComponent,
             PageNotFoundComponent,
-            ProfileComponent,
             UserComponent,
+            FriendsComponent,
             HomeComponent,
             FocusDirective
       ],
@@ -41,6 +42,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
       ],
       providers: [
             ProfileService,
+            FriendsService,
             LocalStorageService
       ],
       bootstrap: [

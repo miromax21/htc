@@ -1,12 +1,16 @@
 export interface IUser {
     id: number;
     username: string;
-    city: string;
+    location: string;
     marital_status: string;
     phoneNumber: string;
     email: string;
     interests: string;
 }
-export interface IArticleError {
+export interface IUserFrends {
+    username: string;
+    location: string;
+    status: string;
+    img: string;
 
 }

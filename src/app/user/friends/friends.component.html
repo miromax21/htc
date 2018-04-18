@@ -1,0 +1,13 @@
+<div class="content friends scroll">
+    <ng-container *ngFor="let item of frends ">
+        <div class="user-frend">
+            <img class="user-avatar" src="{{item.img}}" alt="">
+            <div class="user-frend-info">
+                <div class="user-frend-info-name">{{item.username}}</div>
+                <div class="user-frend-info-location"> {{item.location}} </div>
+                <div class="user-frend-info-status">{{item.status}}</div>
+            </div>
+        </div>
+    </ng-container>
+    <div class="clearfix"></div>
+</div>

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LocalStorageEnum } from '../shared/services/local-storage.service';
+import { LocalStorageEnum } from '../../shared/services/local-storage.service';
 import { ProfileService } from 'app/shared/services/profile.service';
 import { Utils } from 'app/shared/utils';
-import { IUser } from '../shared/interfaces/i-user.interface';
-import { AuthorizationService } from '../shared/services/authorization.service';
+import { IUser } from '../../shared/interfaces/i-user.interface';
+import { AuthorizationService } from '../../shared/services/authorization.service';
 @Component({
-  selector: 'app-article',
+  selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.less']
 })
@@ -18,11 +18,11 @@ export class UserComponent implements OnInit {
   showPopUp: boolean;
   edit_marital_status: boolean;
   edit_username: boolean;
-  edit_city: boolean;
+  edit_location: boolean;
   edit_phoneNumber: boolean;
   edit_email: boolean;
   public myForm: FormGroup;
-  constructor(private _authorizationService: AuthorizationService, private _profileService: ProfileService, private _localStorageService: ProfileService) {
+  constructor(private _profileService: ProfileService) {
   }
 
   ngOnInit() {
@@ -31,12 +31,12 @@ export class UserComponent implements OnInit {
     this.userInterests = this.user.interests.split(',');
     this.edit_marital_status = false;
     this.edit_username = false;
-    this.edit_city = false;
+    this.edit_location = false;
     this.edit_phoneNumber = false;
     this.edit_phoneNumber = false;
   }
   setInterests() {
-    this._localStorageService.SetUser(this.user);
+    this._profileService.SetUser(this.user);
   }
   addInteres(interes: string): void {
     this.userInterests.unshift(interes);
@@ -62,6 +62,6 @@ export class UserComponent implements OnInit {
   }
 
   private UpdateUserInfo() {
-    this._localStorageService.SetUser(this.user);
+    this._profileService.SetUser(this.user);
   }
 }
