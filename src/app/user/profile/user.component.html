@@ -42,8 +42,8 @@
                 <span class="title">Интересы</span>
                 <ul class="checkboxs-list scroll">
 
-                    <ng-container *ngFor="let item of userInterests ">
-                        <span class="userInteres"> {{item}}</span>
+                    <ng-container *ngFor="let item of userInterests; let i = index">
+                        <span class="userInteres" (click)="delete(i)"> {{item}}</span>
                     </ng-container>
                 </ul>
             </div>

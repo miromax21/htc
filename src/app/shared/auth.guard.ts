@@ -20,7 +20,6 @@ export class AuthGuard implements CanActivate {
     }
 
     private IsAccessed(): boolean {
-        console.log(this._accountService.GetUser());
         if (!this._accountService.IsAuthenticated())
             this._authorizationService.FakeSignIn();
         return this._accountService.IsAuthenticated();

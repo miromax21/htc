@@ -21,6 +21,7 @@ export class UserComponent implements OnInit {
   edit_location: boolean;
   edit_phoneNumber: boolean;
   edit_email: boolean;
+  error_massage: number;
   public myForm: FormGroup;
   constructor(private _profileService: ProfileService) {
   }
@@ -39,11 +40,23 @@ export class UserComponent implements OnInit {
     this._profileService.SetUser(this.user);
   }
   addInteres(interes: string): void {
+    interes = interes.trim();
+    if (Utils.Array.Contains(this.userInterests, interes)) {
+      this.error_massage = 1;
+      return
+    }
+    if (interes.split(',').length > 1) {
+      this.error_massage = 2;
+      return
+    }
+    if (interes.length > 40) {
+      this.error_massage = 3
+      return;
+    }
+
+    this.error_massage = null;
     this.userInterests.unshift(interes);
     this.user.interests = this.userInterests.toString();
-    this.setInterests();
-    let a = this.user['username'];
-    debugger
 
   }
   chenge(user_options: string) {
@@ -56,7 +69,11 @@ export class UserComponent implements OnInit {
     this.editObj = this.user[user_options];
     this.toogle(user_options);
   }
-
+  delete(index: string) {
+    this.userInterests.splice(parseInt(index), 1);
+    this.user.interests = this.userInterests.toString();
+    this.UpdateUserInfo();
+  }
   private toogle(option_part) {
     this["edit_" + option_part] = !this["edit_" + option_part];
   }
