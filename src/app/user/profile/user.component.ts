@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild  } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LocalStorageEnum } from '../../shared/services/local-storage.service';
 import { ProfileService } from 'app/shared/services/profile.service';
@@ -22,7 +22,7 @@ export class UserComponent implements OnInit {
   edit_phoneNumber: boolean;
   edit_email: boolean;
   error_massage: number;
-  public myForm: FormGroup;
+  @ViewChild('interesInput') input;
   constructor(private _profileService: ProfileService) {
   }
 
@@ -53,10 +53,11 @@ export class UserComponent implements OnInit {
       this.error_massage = 3
       return;
     }
-
     this.error_massage = null;
     this.userInterests.unshift(interes);
     this.user.interests = this.userInterests.toString();
+    this.UpdateUserInfo();
+    this.input.nativeElement.value ="";
 
   }
   chenge(user_options: string) {
