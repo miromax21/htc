@@ -54,16 +54,15 @@ html{
         line-height: 32px;
         padding: 0 15px;
         margin-right: 5px;
-        background: @color-white;
-        color: @color-black;
+        color: @color-white;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         text-decoration: none;
         .box-shadow2(0 5px 0 @color-white, 0 1px 3px fade(@color-black, 31%));
-     
+        #gradient.vertical(@color-bondiBlue;@color-matisse; 0%; 100%);
         &.active-link {
-            #gradient.vertical(@color-bondiBlue;@color-matisse; 0%; 100%);
-            color: @color-white;
+            background: @color-white;
+            color: @color-black;
         }
 
         &:not(.disabled):hover {

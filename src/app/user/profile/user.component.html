@@ -7,13 +7,13 @@
         </div>
         <div class="userprofile-info">
             <div class="userprofile-info-name">
-                <input *ngIf="edit_username" class="item-input" inputAutofocus (blur)="chenge('username')" [(ngModel)]="user.username" />
-                <span *ngIf="!edit_username" class="item-text" (click)="edit('username')">{{user.username}}</span>
+                <input *ngIf="!edit_username" class="item-input" inputAutofocus (blur)="chenge('username')" [(ngModel)]="user.username" />
+                <span *ngIf="edit_username" class="item-text" (click)="edit('username')">{{user.username}}</span>
             </div>
 
             <div class="userprofile-info-location">
-                <input *ngIf="edit_location" class="item-input" inputAutofocus (blur)="chenge('location')" [(ngModel)]="user.location" />
-                <span *ngIf="!edit_location" class="item-text" (click)="edit('location')">{{user.location}}</span>
+                <input *ngIf="!edit_location" class="item-input" inputAutofocus (blur)="chenge('location')" [(ngModel)]="user.location" />
+                <span *ngIf="edit_location" class="item-text" (click)="edit('location')">{{user.location}}</span>
             </div>
             <div class="personal-info">
 

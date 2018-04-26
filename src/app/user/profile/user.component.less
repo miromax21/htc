@@ -36,15 +36,8 @@
 
 .profile{
 padding: 15px;
-.userprofile-info-name{
-    font-size: 23px;
-    padding: 5px 0 0 0;
-}    
-.userprofile-info-location{
-    color: @color-boulder;
-    font-size: 11px;
+   
 
-}
     .avatar{
         width: 132px;
         height: 170px;
@@ -88,24 +81,40 @@ padding: 15px;
         padding: 0 0 0 20px;
         .title{
             width: 156px;
-            display: inline-block;
             font-weight: bold;
             font-size: 12px;
+            line-height: 18px;
         }
-        .personal-info-item {
-            padding: 2px 0;
+        .userprofile-info-name{
+            font-size: 23px;
+            padding: 5px 0 0 0;
+            .item-text,.item-input{
+                display: block;
+                height: 27px;
+                line-height: 27px;
+
+            }
+        }
+        .userprofile-info-location{
+            color: @color-boulder;
+            font-size: 11px;
+            .item-text,.item-input{
+                display: block;
+                height: 15px;
+                line-height: 15px;
+            }
         }
         .personal-info-item{
-            .item-text,.item-input{
-                display: inline-block;
-                width: 142px;
-                font-size: 12px;
-                line-height: 18px;
-                height: 18px;
+            padding: 3px 0 2px 0;
+            &:after{
+                content: "";
+                display: block;
+                clear: both;
             }
         }
         .item-input{
             padding: 0;
+
             &:focus{
                 outline: none;
               .box-shadow(inset 0 0 6px 0px rgba(0, 0, 0, 0.32));
@@ -113,9 +122,29 @@ padding: 15px;
         }
 
     }
+
+    .personal-info{
+        .item-input{
+            float: right;
+        }
+        .title{
+            float: left;
+        }
+        .item-text,.item-input{
+            width: 145px;
+            font-size: 12px;
+            line-height: 18px;
+            height: 18px;
+        }
+        .item-text{
+            float: right;
+        }
+
+    }
     .interests{
         .title{
-            padding:7px 0;
+            padding: 5px 0;
+            display: block;
         }
     }
     .userInteres{
@@ -133,7 +162,7 @@ padding: 15px;
         }
     }
     .personal-info{
-        padding: 21px 0;
+        padding: 19px 0;
         .personal-info-values{
             padding: 26px 0 32px 0;
         }
