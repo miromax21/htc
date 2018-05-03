@@ -1,40 +1,54 @@
 <div class="content profile">
 
     <div id="userprofile">
-        <div class="avatar">
-            <img src="/assets/images/avatar.png" class="avatar-img" alt="avatar" />
+
+
+        <div class="userprofile-avatar">
+            <div class="avatar">
+                <img src="/assets/images/avatar.png" class="avatar-img" alt="avatar" />
+            </div>
             <span class="add-user-btn">Добавить в друзья</span>
         </div>
         <div class="userprofile-info">
             <div class="userprofile-info-name">
-                <input *ngIf="!edit_username" class="item-input" inputAutofocus (blur)="chenge('username')" [(ngModel)]="user.username" />
-                <span *ngIf="edit_username" class="item-text" (click)="edit('username')">{{user.username}}</span>
+
+                <span class="item-text" (click)="edit('username')">
+                    <input *ngIf="edit_username" class="item-input" inputAutofocus (blur)="chenge('username')" [(ngModel)]="user.username" /> {{user.username}}
+                </span>
             </div>
 
             <div class="userprofile-info-location">
-                <input *ngIf="!edit_location" class="item-input" inputAutofocus (blur)="chenge('location')" [(ngModel)]="user.location" />
-                <span *ngIf="edit_location" class="item-text" (click)="edit('location')">{{user.location}}</span>
+
+                <span class="item-text" (click)="edit('location')">
+                    <input *ngIf="edit_location" class="item-input" inputAutofocus (blur)="chenge('location')" [(ngModel)]="user.location" /> {{user.location}}
+                </span>
             </div>
             <div class="personal-info">
 
                 <div class="personal-info-item">
                     <span class="title">Семейное положение</span>
-                    <input *ngIf="edit_marital_status" inputAutofocus class="item-input" (blur)="chenge('marital_status')" [(ngModel)]="user.marital_status"
-                    />
-                    <span *ngIf="!edit_marital_status" (click)="edit('marital_status')" class="item-text">{{user.marital_status}}</span>
+
+                    <span (click)="edit('marital_status')" class="item-text">
+                        <input *ngIf="edit_marital_status" inputAutofocus class="item-input" (blur)="chenge('marital_status')" [(ngModel)]="user.marital_status"
+                        /> {{user.marital_status}}
+                    </span>
                 </div>
 
                 <div class="personal-info-item">
                     <span class="title">Телефон</span>
-                    <input *ngIf="edit_phoneNumber" inputAutofocus class="item-input" (blur)="chenge('phoneNumber')" [(ngModel)]="user.phoneNumber"
-                    />
-                    <span *ngIf="!edit_phoneNumber" (click)="edit('phoneNumber')" class="item-text">{{user.phoneNumber}}</span>
+
+                    <span (click)="edit('phoneNumber')" class="item-text">
+                        <input *ngIf="edit_phoneNumber" inputAutofocus class="item-input" (blur)="chenge('phoneNumber')" [(ngModel)]="user.phoneNumber"
+                        /> {{user.phoneNumber}}
+                    </span>
                 </div>
 
                 <div class="personal-info-item">
                     <span class="title">E-mail</span>
-                    <input *ngIf="edit_email" inputAutofocus class="item-input" (blur)="chenge('email')" [(ngModel)]="user.email" />
-                    <span *ngIf="!edit_email" (click)="edit('email')" class="item-text">{{user.email}}</span>
+
+                    <span (click)="edit('email')" class="item-text">
+                        <input *ngIf="edit_email" inputAutofocus class="item-input" (blur)="chenge('email')" [(ngModel)]="user.email" /> {{user.email}}
+                    </span>
                 </div>
             </div>
 

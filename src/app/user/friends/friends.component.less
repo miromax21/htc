@@ -4,16 +4,18 @@
 .friends{
     width: 494px;
     padding: 0 15px;
+    position: relative;
     .user-avatar{
         width: 62px;
         height: 62px;
-        display: inline-block;
+        position: absolute;
     }
     .user-frend-info{
-        display: inline-block;
+        position: relative;
         vertical-align: top;
-        max-width: 163px;
-        padding: 0 13px;
+        max-width: 155px;
+        height: 65px;
+        margin-left: 80px;
         .user-frend-info-name{
         font-weight: bold; 
         font-size: 13px;
@@ -34,6 +36,24 @@
     .user-frend{
         float: left;
         width: 50%;
+        max-width: 225px;
         padding: 15px 0;
     }
+    @media screen and (max-width: 720px) {
+
+            width: 100%;
+            .user-frend{
+                max-width: none;
+            }
+
+    }
+    @media screen and (max-width: 480px) {
+
+            .user-frend{
+                width: 100%;
+             
+                float: none;
+            }
+       
+}
 }
