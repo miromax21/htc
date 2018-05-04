@@ -3,11 +3,12 @@
 
 #splashScreen {
     position: fixed;
+    z-index: 20;
     top: 0;
     left: 0;
     right: 0;
     height: 100%;
-    background: #fff;
+    background: @color-white;
   }
   
   .loader {
@@ -48,12 +49,9 @@ html{
 }
 .container{
     position: relative;
-    // width: 489px;
-    // min-height: 279px;
-    // margin-left: 41px;
-    width: 100%;
-    min-height: 417px;
-    padding: 48px 57px 37px 42px;
+    width: 487px;
+    min-height: 368px;
+    margin: 48px 0 0 39px;
     .content{
         background-color:@color-white;
         width: 100%;
@@ -79,6 +77,7 @@ html{
 .tabs {
     .tab {
         position: relative;
+        z-index: 2;
         display: inline-block;
         font-size: 14px;
         line-height: 32px;
@@ -118,10 +117,14 @@ html{
 @media screen and (max-width: 640px) {
     .container,.layout,.content.fiends{
         padding: 5px;
-        width: 100%;
     }
     .container .content,.layout{
         height: auto;
+    }
+}
+@media screen and (max-width: 640px) {
+    .container,.layout,.content.fiends{
+        width: 100%;
     }
 }
  
