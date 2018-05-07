@@ -65,6 +65,20 @@
     </div>
 </div>
 <div class="add-interes">
-    <input type="text" class="add-interes-input" name="interes" placeholder="добавить интерес" #interesInput>
-    <button class="add-interes-btn" (click)="addInteres(interesInput.value)">+</button>
+    <input type="text" class="add-interes-input" name="interes" placeholder="добавить интерес" maxlength="18" required (keyup)="0"
+        #interesInput />
+    <button class="add-interes-btn" (click)="addInteres()">+</button>
+    <div class="error-message-container" [ngSwitch]="interes_error_massage">
+        <div *ngSwitchCase="1" class="icon error-message">такой интерес уже добавлен</div>
+        <div *ngSwitchDefault>
+            <span *ngIf="interesInput.value.length >= 18" class="icon error-message">
+                не больше 23 символов!
+            </span>
+            <span *ngIf="interesInput.value.split(',').length > 1">
+                символ "," зарезервирован
+            </span>
+
+        </div>
+
+    </div>
 </div>

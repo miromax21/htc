@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild  } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LocalStorageEnum } from '../../shared/services/local-storage.service';
 import { ProfileService } from 'app/shared/services/profile.service';
@@ -21,8 +21,8 @@ export class UserComponent implements OnInit {
   edit_location: boolean;
   edit_phoneNumber: boolean;
   edit_email: boolean;
-  error_massage: number;
-  @ViewChild('interesInput') input;
+  interes_error_massage: number;
+  @ViewChild('interesInput') interesInput;
   constructor(private _profileService: ProfileService) {
   }
 
@@ -35,29 +35,33 @@ export class UserComponent implements OnInit {
     this.edit_location = false;
     this.edit_phoneNumber = false;
     this.edit_phoneNumber = false;
+    this.interes_error_massage = -1;
   }
   setInterests() {
     this._profileService.SetUser(this.user);
   }
-  addInteres(interes: string): void {
-    interes = interes.trim();
+
+  setError(target, err: number) {
+    this[target] = err || -1;
+  }
+  addInteres(): void {
+    let interes = this.interesInput.nativeElement.value.trim();
+    this.setError('interes_error_massage', -1);
+    var _this = this;
+    var timer = setTimeout(function () { _this.setError('interes_error_massage', null); timer = null }, 2500);
+    if (interes.length == 0) {
+      return
+    }
     if (Utils.Array.Contains(this.userInterests, interes)) {
-      this.error_massage = 1;
+      this.setError('interes_error_massage', 1);
       return
     }
-    if (interes.split(',').length > 1) {
-      this.error_massage = 2;
-      return
-    }
-    if (interes.length > 40) {
-      this.error_massage = 3
-      return;
-    }
-    this.error_massage = null;
+
+
     this.userInterests.unshift(interes);
     this.user.interests = this.userInterests.toString();
     this.UpdateUserInfo();
-    this.input.nativeElement.value ="";
+    this.interesInput.nativeElement.value = "";
 
   }
   chenge(user_options: string) {

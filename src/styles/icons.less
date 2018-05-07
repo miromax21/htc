@@ -6,8 +6,14 @@
         &:before{
             content: "×";
             font-size: 23px;
-            
-
+        }
+    }
+    &.error-message{
+        &:before{
+            content: "error: ";
+            font-weight: bold;
+            font-size: 15px;
+            margin-right: 2px;
         }
     }
 }

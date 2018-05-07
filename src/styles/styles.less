@@ -88,15 +88,12 @@ html{
         border-top-right-radius: 3px;
         text-decoration: none;
         .box-shadow2(0 5px 0 @color-white, 0 1px 3px fade(@color-black, 31%));
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.38);
         #gradient.vertical(@color-bondiBlue;@color-matisse; 0%; 100%);
         &.active-link {
             background: @color-white;
             color: @color-black;
-        }
-
-        &:not(.disabled):hover {
-            text-decoration: none;
-          //  color: @color-sea-4;
+            text-shadow: none;
         }
     }
 }
