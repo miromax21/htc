@@ -42,11 +42,11 @@ export class UserComponent implements OnInit {
   }
 
   setError(target, err: number) {
-    this[target] = err || -1;
+    this[target] = err || 0;
   }
   addInteres(): void {
     let interes = this.interesInput.nativeElement.value.trim();
-    this.setError('interes_error_massage', -1);
+    this.setError('interes_error_massage', 0);
     var _this = this;
     var timer = setTimeout(function () { _this.setError('interes_error_massage', null); timer = null }, 2500);
     if (interes.length == 0) {
